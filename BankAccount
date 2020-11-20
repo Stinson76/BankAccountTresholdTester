@@ -1,0 +1,60 @@
+//Stinson 
+
+public class BankAccount
+{   
+	private double balance;
+	private double interest;
+   
+	public BankAccount()
+	{
+		balance =0;
+		interest = 0.05;
+		
+	}
+
+	public BankAccount(double initialBalance, double initialInterest)
+	{
+		balance = initialBalance;
+		interest = initialInterest;
+	}
+
+	public void deposit(double amount)
+	{   
+		balance = balance + amount;
+	}
+
+	public void withdraw(double amount)
+	{
+		if(balance>amount) { 
+			
+			balance=balance-amount;
+			
+			
+		}else
+			System.out.println("Insufficient fund for your transaction");
+
+	}  
+
+	public double getInterest()
+	{
+		
+		interest = (balance*0.05);
+		return interest;
+	}	
+	
+	public double getBalance()
+	{
+		return balance;
+		
+	}	 
+		
+	
+		
+	
+
+	
+
+	
+	
+	
+}
