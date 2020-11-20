@@ -1,0 +1,80 @@
+/**
+ *  Cedestinson Ductan
+
+ */
+/* A tester class where you can enter a target balance combined with the 
+ * available balance and will tell you how many months it will take to get
+ * that target balance.
+ */
+/*class decimal format to format balance to 2 decimal
+ * 
+ */
+import java.text.DecimalFormat;
+
+import java.util.Scanner;
+
+public class BankAccountTesterTreshold {
+
+	
+	public static void main(String[]args) {
+		BankAccount test = new BankAccount();
+		Scanner in = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("0.00");
+		/*
+		 * the balance is entered as deposit 
+		 */
+		test.deposit(1000);
+		test.deposit(0);
+		
+		test.withdraw(0);
+		test.withdraw(0);
+		test.getInterest();
+		System.out.println("Actual balance is " + test.getBalance());
+		double interest= test.getInterest();
+		double balance = test.getBalance();
+		/*
+		and the target balance
+		 * as input through the scanner
+		 */
+		System.out.println("enter a target balance");
+		double targetBalance= in.nextDouble();
+		/*
+		 * I use a while statement within an if statement to get
+		 * the time it will take to get to the target balance
+		 * and the if statement if the input target balance is less than
+		 * or equal to the available balance.
+		 */
+		 if(targetBalance<= balance) {
+			 System.out.println("Target balance already reached");
+		 }
+		 else {
+		int month=0;
+		
+		while(targetBalance>balance)
+		
+		{
+		  month++;
+		 interest = balance * 5 / 100; 
+		 balance = balance + interest;
+		}
+		
+		System.out.println("In "+month+":months  ");
+		
+		System.out.printf("Your balance will be "+df.format(balance)+"\n");
+	    
+
+		
+		in.close();
+		
+		}
+			
+		}
+}
+	
+	
+	
+	
+	
+	
+	
+
