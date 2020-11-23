@@ -44,6 +44,15 @@ public class BankAccountTesterTreshold {
 		 * and the if statement if the input target balance is less than
 		 * or equal to the available balance.
 		 */
+		System.out.println("enter a target balance");
+		if(in.hasNextDouble()) 
+		{
+		
+		 
+		 
+		 
+		 double targetBalance= in.nextDouble();
+		
 		 if(targetBalance<= balance) {
 			 System.out.println("Target balance already reached");
 		 }
@@ -57,7 +66,6 @@ public class BankAccountTesterTreshold {
 		 interest = balance * 5 / 100; 
 		 balance = balance + interest;
 		}
-		
 		System.out.println("In "+month+":months  ");
 		
 		System.out.printf("Your balance will be "+df.format(balance)+"\n");
@@ -71,10 +79,13 @@ public class BankAccountTesterTreshold {
 		}
 }
 	
+}
 	
 	
 	
 	
 	
+
+
 	
 
